@@ -1,38 +1,41 @@
-# Session 2: Research Questions and Hypotheses
+# Research Questions and Hypotheses
 
-## Purpose
+## Six Research Questions
 
-This file records the finalized research questions and hypotheses for the student performance prediction project.
+| # | Research Question | Type | Connected Hypothesis |
+|---|---|---|---|
+| RQ1 | Which student-related variables are most strongly associated with academic performance? | Factor analysis | H4 |
+| RQ2 | Which machine-learning algorithm gives the best predictive performance for final-grade prediction? | Prediction | H1 |
+| RQ3 | Do ensemble models, such as Random Forest and Gradient Boosting, outperform simpler models, such as Linear or Logistic Regression and Decision Trees? | Prediction | H1 |
+| RQ4 | How does performance change when prior grades G1 and G2 are removed from the feature set? | Intervention / prediction comparison | H2, H3 |
+| RQ5 | Which model best balances accuracy, interpretability, robustness, and educational usefulness? | Prediction / model evaluation | H3, H4 |
+| RQ6 | Can prompt-engineered workflows improve clarity, reproducibility, and documentation quality? | Process | H5 |
 
-## Research Questions
+## Five Hypotheses
 
-| No. | Research Question | Target Variable | Predictor Variables | Task Type | Category | G1/G2 Leakage Risk |
-|---|---|---|---|---|---|---|
-| RQ1 | Which machine learning algorithm predicts final student performance most accurately? | Final grade or student success | Student, family, school, and study-related variables | Regression or classification | Prediction | Depends on feature set |
-| RQ2 | How strongly do prior grades predict final student performance? | Final grade or student success | G1 and G2 prior grades | Regression or classification | Prediction | High |
-| RQ3 | How are study time and absences related to final performance? | Final grade or student success | Study time and absences | Regression or classification | Factor analysis | Low |
-| RQ4 | Do family and background variables improve prediction performance? | Final grade or student success | Parent education, family support, internet access, and related factors | Regression or classification | Factor analysis | Low |
-| RQ5 | Can early-warning models identify students at risk before final grades are available? | At-risk status or final success | Early-available student and background variables | Classification | Prediction / intervention | Low if G1 and G2 are excluded |
-| RQ6 | Which variables are most important for explaining model predictions? | Final grade or student success | All selected model features | Regression or classification | Interpretation | Depends on feature set |
-
-## Hypotheses
-
-| No. | Hypothesis | Connected Research Question |
+| # | Hypothesis | Answers / Connects To |
 |---|---|---|
-| H1 | Models that include prior grades will predict final performance more accurately than models that exclude prior grades. | RQ1, RQ2 |
-| H2 | Higher study time will be associated with stronger final performance. | RQ3 |
-| H3 | More absences will be associated with weaker final performance. | RQ3 |
-| H4 | Family and background variables will add useful predictive information beyond basic school variables. | RQ4 |
-| H5 | Early-warning models can identify at-risk students before final grades are available, but with lower accuracy than full-information models. | RQ5 |
+| H1 | Ensemble tree-based models, especially Random Forest and Gradient Boosting, will outperform Linear Regression and Decision Trees. | RQ2, RQ3 |
+| H2 | Models that include prior grades G1 and G2 will perform substantially better than models that exclude them. | RQ4 |
+| H3 | The early-warning model, which excludes G1 and G2, will be less accurate but more useful for intervention decisions. | RQ4, RQ5 |
+| H4 | Feature importance will highlight prior achievement, failures, study time, attendance, and support variables. | RQ1, RQ5 |
+| H5 | Prompt-engineered documentation will improve students' ability to explain methods and produce a reproducible report. | RQ6 |
 
 ## Two-Scenario Design
 
-This project will use two modeling scenarios.
+This project uses two modeling scenarios: a full-information scenario and an early-warning scenario.
 
-The first scenario is the full-information model. This model may include prior grade variables such as G1 and G2. It is useful for understanding the strongest possible prediction performance, but it may include information that is too close to the final outcome.
+In the full-information scenario, models may use G1 and G2 to predict G3. This usually improves predictive performance because G1 and G2 are closely related to the final grade.
 
-The second scenario is the early-warning model. This model excludes G1 and G2 so that predictions are based only on information available earlier in the student experience. This design is more realistic for identifying students who may need support before the final grade is known.
+In the early-warning scenario, G1 and G2 are removed from the feature set. This may reduce accuracy, but it makes the model more realistic for early intervention by avoiding reliance on information that may arrive too late to help students.
 
-## Notes on Target Leakage
+## Shared Research Questions Activity Table
 
-Target leakage occurs when a model uses information that would not realistically be available at the time of prediction. In this project, G1 and G2 may create leakage if the goal is to predict final performance early. Therefore, the project separates full-information prediction from early-warning prediction.
+| Pair | Assigned RQ | Refined Measurable Sentence | Target Variable | Predictor(s) | Task Type | Matching Hypothesis | Category | G1/G2 Leakage? |
+|---|---|---|---|---|---|---|---|---|
+| Pair 1 | RQ1 | | | | | | | |
+| Pair 2 | RQ2 | | | | | | | |
+| Pair 3 | RQ3 | | | | | | | |
+| Pair 4 | RQ4 | | | | | | | |
+| Pair 5 | RQ5 | | | | | | | |
+| Pair 6 | RQ6 | | | | | | | |
