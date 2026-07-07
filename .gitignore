@@ -17,8 +17,3 @@ venv/
 # System files
 .DS_Store
 Thumbs.db
-
-# Large model/output files
-*.pkl
-*.joblib
-*.h5
