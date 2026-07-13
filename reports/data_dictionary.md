@@ -104,3 +104,59 @@ Before training a model:
 3. Exclude variables that would not be available at prediction time.
 4. Evaluate demographic variables for fairness and ethical implications.
 5. Verify data types, category encodings, unique values, and missing-value counts against the loaded dataset.
+
+<!-- SESSION-08-TARGETS:START -->
+## Target Variables
+
+This project uses two target variables: one for regression and one for classification.
+
+### Regression Target
+
+| Variable | Type | Description | Use |
+|---|---|---|---|
+| `G3` | Numeric | Final student grade | Regression target |
+
+`G3` is the original final-grade variable. It is used when predicting the student's actual numeric final grade.
+
+### Classification Target
+
+| Variable | Type | Description | Rule | Use |
+|---|---|---|---|---|
+| `passed` | Binary integer | Pass/fail outcome created from `G3` | `1` if `G3 >= 10`, otherwise `0` | Classification target |
+
+The `passed` variable is created using:
+
+```python
+df["passed"] = (df["G3"] >= 10).astype(int)
+```
+
+| Value | Meaning |
+|---:|---|
+| `1` | Student passed |
+| `0` | Student did not pass |
+
+### Chosen Threshold
+
+The chosen passing threshold is `G3 >= 10`.
+
+Students with `G3 >= 10` are labeled as passing. Students with `G3 < 10` are labeled as not passing or at risk.
+
+### Threshold Limitation
+
+One limitation is that this rule creates a hard cutoff. A student with `G3 = 9` is labeled as not passing, while a student with `G3 = 10` is labeled as passing, even though their academic performance may be very similar.
+
+The binary target also loses grade detail. For example, students with `G3 = 10` and `G3 = 18` are both labeled as passing despite having different performance levels.
+
+### Final Decision
+
+For the first version of the project, the `G3 >= 10` threshold will be retained because it is simple, interpretable, and useful for binary classification.
+
+The hard-cutoff limitation will be documented. Later analysis may compare alternative thresholds or use multiple risk levels.
+
+### Project Target Summary
+
+| Modeling Task | Target | Definition |
+|---|---|---|
+| Regression | `G3` | Predict the student's numeric final grade |
+| Classification | `passed` | Predict `1` when `G3 >= 10`; otherwise predict `0` |
+<!-- SESSION-08-TARGETS:END -->
