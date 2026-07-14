@@ -1,0 +1,28 @@
+{
+  "session": 21,
+  "title": "Early-warning dataset design",
+  "created_utc": "2026-07-14T19:38:20.673568+00:00",
+  "source": "Features: X_full.parquet; Target: y_full.parquet",
+  "feature_artifact": "data\\processed\\X_early.parquet",
+  "target_artifact": "data\\processed\\y_early.parquet",
+  "csv_feature_backup": "data\\processed\\X_early.csv",
+  "csv_target_backup": "data\\processed\\y_early.csv",
+  "rows": 395,
+  "full_feature_count": 41,
+  "early_feature_count": 39,
+  "features_removed_count": 2,
+  "removed_columns": [
+    "G1",
+    "G2"
+  ],
+  "target_column": "G3",
+  "validation": {
+    "G1_absent_from_X_early": true,
+    "G2_absent_from_X_early": true,
+    "G3_absent_from_X_early": true,
+    "G3_saved_as_target": true,
+    "row_counts_match": true,
+    "exactly_two_features_removed": true,
+    "saved_files_match_memory": true
+  }
+}

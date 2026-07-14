@@ -1,0 +1,3 @@
+Artifact,Purpose,Rows,Columns,Contains_G1,Contains_G2,Contains_G3
+X_early,Early-warning predictor matrix,395,39,False,False,False
+y_early,Final-grade target,395,1,False,False,True
