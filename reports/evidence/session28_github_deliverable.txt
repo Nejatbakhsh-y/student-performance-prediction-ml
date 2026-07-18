@@ -1,0 +1,31 @@
+﻿GSSRP 2026 - Session 28 GitHub Deliverable
+==========================================
+
+Completed: 2026-07-18 11:45:13
+Project: C:\Users\nejat\OneDrive\Desktop\UN\Skills\GitHub 2026\student-performance-prediction-ml
+Branch: main
+Remote: https://github.com/Nejatbakhsh-y/student-performance-prediction-ml.git
+
+Notebook:
+notebooks\04_regression_models.ipynb
+
+Automation:
+scripts\complete_session28_github.ps1
+
+Completed content:
+- RandomForestRegressor with 300 trees
+- random_state=42
+- Existing full-information train/test split
+- Decision Tree comparison
+- MAE, RMSE, and R2 evaluation
+- Train-test RMSE comparison
+- One Random Forest comparison-table row
+- Duplicate Session 28 cell protection
+- CSV artifact-generation code
+- Interpretation and reflection
+- Notebook validation checks
+
+Notebook JSON validation: PASS
+
+GitHub deliverable:
+Add Random Forest results to the regression notebook.
