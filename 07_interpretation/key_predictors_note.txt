@@ -1,0 +1,52 @@
+SESSION 42: KEY-PREDICTORS NOTE
+
+Research Objective
+The purpose of this analysis was to identify the predictors that contributed
+most strongly to the Random Forest model's prediction of students' final
+grade, G3.
+
+Method
+A RandomForestRegressor containing 300 trees was trained using the complete
+early-prediction dataset. G3 was used as the target. G1 and G2 were excluded
+from the predictors so earlier course grades would not dominate the
+early-warning model. Categorical predictors were converted into numeric
+indicator columns through one-hot encoding.
+
+Top Ten Predictors
+1. absences: 0.180569 (18.06%)
+2. failures: 0.137361 (13.74%)
+3. goout: 0.047060 (4.71%)
+4. age: 0.037091 (3.71%)
+5. freetime: 0.035805 (3.58%)
+6. health: 0.035733 (3.57%)
+7. Medu: 0.032359 (3.24%)
+8. Walc: 0.032209 (3.22%)
+9. studytime: 0.031190 (3.12%)
+10. Fedu: 0.026043 (2.60%)
+
+Summary
+The highest-ranked predictor was absences, with an importance
+of 0.180569 (18.06%).
+The next two predictors were failures and
+goout. The top three predictors accounted for
+36.50% of total importance, the top five accounted for
+43.79%, and the top ten accounted for 59.54%.
+
+Comparison with Hypothesis H4
+Hypothesis H4 proposed that academic, behavioral, demographic, family, and
+school-related variables would not contribute equally to final-grade
+prediction. These results partially supports H4 because the predictors have unequal importance, although the top five do not account for at least half of total importance.
+
+Interpretation
+The ranking identifies the predictors that the Random Forest used most
+strongly when separating students with different final-grade outcomes.
+Feature importance describes predictive association; it is not evidence of
+causation. Correlated predictors may divide or redistribute importance between
+themselves, while one-hot encoding may divide one categorical predictor's
+importance across several indicator columns.
+
+Recommendation
+Use the importance ranking to identify predictors for further analysis, but do
+not use it as the sole basis for educational intervention, labeling, punitive
+action, or automatic decisions. Confirm the results with permutation
+importance, correlation analysis, and subject-matter knowledge.
