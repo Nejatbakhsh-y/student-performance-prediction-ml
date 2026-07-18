@@ -1,0 +1,75 @@
+SESSION 43: INTERPRETABILITY COMPARISON NOTE
+
+Purpose
+This analysis compared built-in Random Forest feature importance with test-set permutation importance. The model predicted students' final grade, G3, while G1 and G2 were excluded from the predictors to preserve the early-warning design.
+
+Methods
+Built-in importance measures how much each predictor reduced prediction error across the Random Forest's tree splits. Permutation importance was calculated on the held-out test set. Each transformed predictor was shuffled 10 times, and the deterioration in performance was measured using negative root mean squared error.
+
+Main Results
+The highest-ranked built-in predictor was absences.
+The highest-ranked permutation predictor was failures.
+
+The two top-10 lists shared 5 predictors:
+absences, age, failures, goout, studytime.
+
+Predictors found only in the built-in top 10:
+Fedu, Walc, freetime, health, traveltime.
+
+Predictors found only in the permutation top 10:
+Medu, Mjob_at_home, guardian_other, sex_F, sex_M.
+
+The Spearman rank correlation between the complete built-in and permutation rankings was 0.4256. The rankings show moderate overall agreement.
+
+Largest Disagreement
+The largest disagreement involved health. Its built-in rank was 3, while its permutation rank was 56. The absolute rank difference was 53.
+
+Near-Zero and Negative Values
+There were 27 predictors with absolute permutation importance no greater than 0.01. There were 16 predictors with negative mean permutation importance. Near-zero and negative values can result from noise, sampling variation, correlated predictors, redundant information, or overfitting; they do not establish a harmful causal effect.
+
+Interpretation of Disagreements
+The methods answer different questions. Built-in importance describes how the Random Forest constructed its trees. Permutation importance evaluates how strongly held-out test performance depends on each predictor after training. Correlated predictors can share information, so shuffling one may have little effect when another still supplies similar information. One-hot encoding and differences in available split points can also affect built-in importance.
+
+Recommendation
+Permutation importance should receive greater emphasis when the objective is to understand predictors supporting performance on unseen data. Built-in importance remains useful for describing internal model use. The most convincing predictors rank highly under both methods and remain stable across repeated splits or cross-validation folds.
+
+These importance values represent predictive associations and do not prove causation.
+
+TOP 10 BUILT-IN IMPORTANCE RESULTS
+ built_in_rank    feature  built_in_importance
+             1   absences               0.1878
+             2   failures               0.1460
+             3     health               0.0493
+             4      goout               0.0462
+             5        age               0.0371
+             6  studytime               0.0321
+             7   freetime               0.0290
+             8 traveltime               0.0277
+             9       Fedu               0.0269
+            10       Walc               0.0257
+
+TOP 10 PERMUTATION IMPORTANCE RESULTS
+ permutation_rank        feature  permutation_importance_mean  permutation_importance_std
+                1       failures                       0.7211                      0.1818
+                2       absences                       0.4676                      0.1511
+                3          goout                       0.1477                      0.0487
+                4            age                       0.0855                      0.0355
+                5           Medu                       0.0755                      0.0364
+                6          sex_M                       0.0561                      0.0193
+                7          sex_F                       0.0549                      0.0277
+                8      studytime                       0.0548                      0.0371
+                9   Mjob_at_home                       0.0524                      0.0343
+               10 guardian_other                       0.0464                      0.0393
+
+TEN LARGEST RANKING DISAGREEMENTS
+        feature  built_in_rank  permutation_rank  rank_difference
+         health              3                56               53
+  Mjob_services             14                55               41
+           Fedu              9                45               36
+           Dalc             18                54               36
+guardian_mother             53                22               31
+    reason_home             24                52               28
+      address_R             55                28               27
+guardian_father             41                15               26
+          sex_F             30                 7               23
+    Mjob_health             39                17               22
