@@ -1,0 +1,18 @@
+GSSRP 2026 - Session 41 Student Activity Report
+================================================
+
+Dataset: C:\Users\nejat\OneDrive\Desktop\UN\Skills\GitHub 2026\student-performance-prediction-ml\data\student-mat.csv
+Rows evaluated: 395
+Predictors: 30
+G1, G2, and G3 excluded from predictors: PASS
+
+Random Forest:
+Mean CV R2 = 0.307109
+Standard deviation = 0.031844
+
+Gradient Boosting:
+Mean CV R2 = 0.262744
+Standard deviation = 0.072045
+
+Higher mean CV R2: Random Forest
+Smaller CV R2 standard deviation: Random Forest

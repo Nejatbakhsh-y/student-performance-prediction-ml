@@ -1,0 +1,12 @@
+Session 41 Prompt-Engineered Explanation
+========================================
+
+Five-fold cross-validation is more trustworthy than a single train-test split because every observation
+is used for validation once and the reported mean reflects performance across several data partitions.
+The standard deviation also shows how sensitive each model is to the selected fold. A high mean with a
+large standard deviation should be interpreted cautiously because the model is less stable.
+
+Random Forest mean CV R2: 0.307109
+Random Forest CV R2 standard deviation: 0.031844
+Gradient Boosting mean CV R2: 0.262744
+Gradient Boosting CV R2 standard deviation: 0.072045
