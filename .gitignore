@@ -17,3 +17,15 @@ venv/
 # System files
 .DS_Store
 Thumbs.db
+
+# Local environments and generated files
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+*.tmp
+*.temp
+*.bak
+desktop.ini
