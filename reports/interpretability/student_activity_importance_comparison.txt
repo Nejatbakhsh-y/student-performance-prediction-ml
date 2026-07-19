@@ -1,0 +1,9 @@
+Session 43 Student Activity: Importance Comparison
+
+The highest-ranked built-in predictor was absences.
+The highest-ranked permutation predictor was failures.
+The two top-10 lists shared 5 predictors: absences, age, failures, goout, studytime.
+The largest ranking disagreement involved health, with an absolute rank difference of 53.
+The Spearman rank correlation was 0.4256.
+
+Agreement provides stronger interpretive evidence. Disagreement does not mean that either calculation is automatically wrong because the two methods measure different aspects of the fitted model. Correlation, redundancy, encoding, overfitting, and test-sample variation can change the rankings. These are predictive relationships, not causal conclusions.

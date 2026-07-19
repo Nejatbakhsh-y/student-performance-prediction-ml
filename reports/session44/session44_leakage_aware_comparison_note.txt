@@ -1,0 +1,43 @@
+SESSION 44: LEAKAGE-AWARE FULL-VS-EARLY COMPARISON
+
+PURPOSE
+This analysis evaluates the same 300-tree Random Forest regressor on two feature sets using identical training and testing students. The target is G3. The full-information model includes G1 and G2, while the early-warning model excludes G1 and G2.
+
+RESULTS
+Dataset rows: 395
+Training rows: 316
+Testing rows: 79
+
+Full-information model (includes G1 and G2):
+MAE = 1.1863
+RMSE = 2.0023
+R2 = 0.8045
+
+Early-warning model (excludes G1 and G2):
+MAE = 3.0095
+RMSE = 3.7613
+R2 = 0.3100
+
+More accurate model by RMSE: Full-information
+
+ACCURACY GAP
+Early MAE minus Full MAE = 1.8232
+Early RMSE minus Full RMSE = 1.7590
+Early R2 minus Full R2 = -0.4944
+Percentage increase in RMSE = 87.85%
+
+The early-warning model's RMSE was 1.7590 grade points higher than the full-information model, a 87.85% increase.
+
+LEAKAGE-AWARE INTERPRETATION
+G1 and G2 are closely related to G3 and can substantially improve predictive accuracy. However, if the intended intervention occurs before G1 and G2 are available, including them creates timing-related leakage. The full-information result therefore describes later prediction with more information, while the early-warning result is the valid estimate for a genuinely early intervention.
+
+CONCLUSION
+Accuracy alone does not determine whether a student-support model is appropriate. Even when the early-warning model is less accurate, it may be the more responsible operational choice because it uses information genuinely available when support can still be offered. Predictions should initiate supportive human review and should never be used for automatic labeling, surveillance, or punitive decisions.
+
+REPRODUCIBILITY
+Train-test split: 80/20 using identical row indices
+Split random state: 42
+Model: RandomForestRegressor
+Trees per model: 300
+Model random state: 42
+Dataset: student-mat.csv

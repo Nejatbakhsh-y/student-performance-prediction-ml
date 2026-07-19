@@ -1,0 +1,2 @@
+model,test_mae,test_rmse,test_r2,n_estimators,random_state,permutation_repeats,permutation_scoring,dataset_rows,transformed_predictors,g1_g2_excluded
+Random Forest Regressor,3.0094936708860756,3.761326691609313,0.31004409323914617,300,42,10,neg_root_mean_squared_error,395,56,True

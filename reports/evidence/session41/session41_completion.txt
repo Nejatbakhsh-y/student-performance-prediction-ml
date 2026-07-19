@@ -1,0 +1,28 @@
+﻿GSSRP 2026 - Session 41 GitHub Deliverable
+==========================================
+
+Deliverable:
+Cross-validation results committed to the comparison notebook.
+
+Comparison notebook:
+notebooks/model_comparison.ipynb
+
+Evaluation:
+Five-fold cross-validation
+
+Random Forest:
+Mean CV R2 = 0.3071086521552336
+CV R2 standard deviation = 0.03184401157372766
+
+Gradient Boosting:
+Mean CV R2 = 0.26274425801473944
+CV R2 standard deviation = 0.07204515890455561
+
+Primary results file:
+reports/tables/session41/regression_leaderboard_with_cv.csv
+
+Git branch:
+feature/session-41-cross-validation
+
+Status:
+COMPLETE
