@@ -128,3 +128,6 @@ Current status:
 ```text
 Session 1 completed: Project orientation and initial README created.
 ```
+## Project Logic Flowchart
+
+![Student Performance Prediction Machine Learning Logic Flowchart](docs/images/student_performance_ml_logic_flowchart_4k.png)
